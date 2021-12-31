@@ -8,6 +8,8 @@ import org.r2s.dao.StudentRepository;
 import org.r2s.dto.StudentDto;
 import org.r2s.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -78,6 +80,17 @@ public class StudentService {
 			return convertToDto(student);
 		else
 			return null;
+	}
+
+	public void deleteAll() {
+		repo.deleteAll();
+	}
+
+	public List<StudentDto> findStudents(Pageable pageable) {
+		List<Student> students = repo.findStudents(pageable);		
+		List<StudentDto> dtos = new ArrayList<StudentDto>();
+		students.forEach(student -> dtos.add(convertToDto(student)));
+		return dtos;
 	}
 
 }

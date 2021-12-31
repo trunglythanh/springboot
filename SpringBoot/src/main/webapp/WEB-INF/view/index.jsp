@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="<c:url value='/displayStudentForm' />">Display student</a>
+<a href="<c:url value='/displayStudentList' />">Display students List paging</a>
+<a href="<c:url value='/allAboutStudent' />">All about student</a>
 </body>
 </html>

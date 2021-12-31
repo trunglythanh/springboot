@@ -41,6 +41,15 @@ public class StudentDto {
 		this.studentNumber = studentNumber;
 	}
 	
+	
+	
+	
+	public StudentDto(String name, String gender, String studentNumber) {
+		super();
+		this.name = name;
+		this.gender = gender;
+		this.studentNumber = studentNumber;
+	}
 	@Override
 	public boolean equals(Object obj) {
 		StudentDto dto = (StudentDto) obj;
